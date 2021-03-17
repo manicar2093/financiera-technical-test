@@ -1,4 +1,4 @@
-# Financiero
+# Financiero. Prueba técnica
 
 Este repositorio contiene el código de respuesta para la prueba técnica que se solicitó.
 
