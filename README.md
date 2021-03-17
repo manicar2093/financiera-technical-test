@@ -27,3 +27,54 @@ Al tener esto configurado se corre el comando:
 ```
 flask run
 ```
+
+# Endpoint
+
+Esta API solo cuenta con 3 endpoints:
+
+- __/inmem__ __PUT__: A través de ella se puede registrar un nuevo valor con su llave proporcionando el siguiente JSON:
+```
+{
+    "key": "aKey",
+    "value": "Manuel"
+}
+```
+
+Y regresa la siguiente respuesta:
+```
+{
+    "key": "aKey",
+    "value": "aValue",
+    "version": 1
+}
+```
+NOTA: El key y el value son requeridos. En caso de no contener alguno de los dos se responderá con el siguiente JSON:
+```
+{
+    "message": "Key not found in body. Consider request's documentation"
+}
+```
+O con:
+```
+{
+    "message": "Value not found in body. Consider request's documentation"
+}
+```
+
+- __/inmem/{key}__ __GET__: Realiza la busqueda por el key proporcionado. Regresa el siguiente JSON:
+```
+{
+    "key": "aKey",
+    "value": "aValue",
+    "version": 1
+}
+```
+
+- __/inmem/{key}/{version}__ __GET__: Realiza la busqueda por el key y versión proporcionado. Regresa el siguiente JSON:
+```
+{
+    "key": "aKey",
+    "value": "aValue",
+    "version": 1
+}
+```
